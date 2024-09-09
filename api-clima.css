@@ -1,0 +1,155 @@
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background: linear-gradient(120deg, #f0e3c2, #decba4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Container principal */
+.weather-container {
+    background: #f4f4f4;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #000000;
+}
+
+/* Títulos principais */
+h1 {
+    color: #d35400;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* Campo de entrada e botão */
+fieldset {
+    margin-bottom: 20px;
+    border: none;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    border: 2px solid #e67e22;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #d35400;
+}
+
+.search-btn {
+    background-color: #e67e22;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #d35400;
+}
+
+/* Seção de temperatura */
+.dados {
+    margin-top: 20px;
+}
+
+.temperatura-principal {
+    background-color: #ffffff;
+    border: 2px solid #e67e22;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.temperatura-principal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.temperatura-principal p {
+    color: #d35400;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.temperatura-principal h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+.minima-e-maxima {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-minima, .card-maxima {
+    background-color: #ffffff;
+    border: 2px solid #e67e22;
+    border-radius: 10px;
+    padding: 15px;
+    width: 45%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card-minima:hover, .card-maxima:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-minima p, .card-maxima p {
+    color: #d35400;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.card-minima h2, .card-maxima h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .weather-container {
+        padding: 20px 15px;
+    }
+
+    .minima-e-maxima {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+    }
+}

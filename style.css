@@ -1,0 +1,80 @@
+/* Resetando os estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilos do corpo */
+body {
+    background: linear-gradient(120deg, #f0e3c2, #decba4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container principal */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 2px solid #000000;
+}
+
+/* Título principal */
+h1 {
+    font-size: 32px;
+    color: #d35400;
+    margin-bottom: 30px;
+}
+
+/* Estilo da seção de botões */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Estilos dos botões */
+.btn {
+    background-color: #e67e22;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    border: 3px solid black;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

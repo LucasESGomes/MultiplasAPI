@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="api-cep.css">
+    <title>API-CEP</title>
+</head>
+<body>
+    <form id="form" action="">
+    <h1>Cadastro de Usuário</h1>
+        <div class="form">
+        <fieldset class="field">
+            <legend>Endereço</legend>
+            <div class="cep">
+                <label for="cep">CEP</label>
+                <input class="input-cep" type="text" id="cep" autocomplete="off">
+            </div>
+            <br>
+            <div class="rua">
+                <label for="rua">Rua</label>
+                <input class="input-rua" type="text" id="rua" readonly>
+            </div>
+            <br>
+            <div class="numero"> 
+                <label for="numero">Número</label>
+                <input class="input-numero" type="text" id="numero">
+            </div>
+            <br>
+            <div class="bairro">
+                <label for="bairro">Bairro</label>
+                <input class="input-bairro" type="text" id="bairro" readonly>
+            </div>
+            <br>
+            <div class="cidade">
+                <label for="cidade">Cidade</label>
+                <input class="input-cidade" type="text" id="cidade" readonly>
+            </div>
+            <br>
+            <div class="estado">
+                <label for="estado">Estado</label>
+                <input class="input-estado" type="text" id="estado" readonly>
+            </div>
+            <br>
+        </div>
+    </form>
+<script>
+    const preencherFormulario = (endereco) => {
+    document.getElementById("rua").value = endereco.logradouro;
+    document.getElementById("bairro").value = endereco.bairro;
+    document.getElementById("cidade").value = endereco.localidade;
+    document.getElementById("estado").value = endereco.uf;
+}
+
+const cepValido = (cep) => {
+    return cep.length === 8;
+}
+
+const pesquisarCep = async () => {
+    const cep = document.getElementById("cep").value;
+    const url = `http://viacep.com.br/ws/${cep}/json/`;
+    if (cepValido(cep)) {
+        const dados = await fetch(url);
+        const endereco = await dados.json();
+        preencherFormulario(endereco);
+    }
+}
+document.getElementById("cep").addEventListener('focusout', pesquisarCep);
+</script>
+</body>
+</html>

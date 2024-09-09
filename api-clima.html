@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura no Mundo</title>
+    <link rel="stylesheet" href="api-clima.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="weather-container">
+        <h1>Previsão do Tempo no Mundo</h1>
+        <h3>Digite o nome de uma cidade para ver a previsão</h3>
+
+        <fieldset>
+            <legend>Escolha um lugar</legend>
+            <input id="lugar-esperado" type="text" placeholder="Digite uma cidade...">
+        </fieldset>
+
+        <button class="search-btn" onclick="getWeather()">Pesquisar</button>
+
+        <hr>
+
+        <div class="dados">
+            <div class="temperatura-principal">
+                <p>Temperatura Atual</p>
+                <h2 id="temperatura">-</h2>
+            </div>
+            <div class="minima-e-maxima">
+                <div class="card-minima">
+                    <p>Mínima</p>
+                    <h2 id="minima">-</h2>
+                </div>
+
+                <div class="card-maxima">
+                    <p>Máxima</p>
+                    <h2 id="maxima">-</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="api-clima.js"></script>
+</body>
+</html>

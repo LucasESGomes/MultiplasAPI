@@ -1,0 +1,81 @@
+/* Resetando estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo do corpo */
+body {
+    background: linear-gradient(120deg, #f0e3c2, #decba4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container principal */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #000000;
+}
+
+/* Título principal */
+h1 {
+    font-size: 28px;
+    color: #d35400;
+    margin-bottom: 20px;
+}
+
+/* Área de informações do dólar */
+.dolar-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dolar-card {
+    background-color: #ffffff;
+    border: 2px solid #e67e22;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.dolar-card:hover {
+    transform: translateY(-5px);
+}
+
+.dolar-card label {
+    font-size: 18px;
+    color: #d35400;
+}
+
+.dolar-card h2 {
+    font-size: 36px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .dolar-card h2 {
+        font-size: 28px;
+    }
+}
